@@ -38,7 +38,7 @@ namespace InfluxClient
             //  FLOAT FIELDS
             foreach(var floatField in m.FloatFields)
             {
-                retval.AppendFormat("{0}={1},", Escape(floatField.Name), floatField.Value);
+                retval.AppendFormat("{0}={1},", Escape(floatField.Name), Math.Round(floatField.Value,2).ToString().Replace(",","."));
             }
 
             //  INTEGER FIELDS
